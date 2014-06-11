@@ -1,4 +1,4 @@
-package com.goldrenard.epoupdater;
+п»їpackage com.goldrenard.epoupdater;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,8 +29,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Главное активити
- * @author Renard Gold (Илья Егоров)
+ * Р“Р»Р°РІРЅРѕРµ Р°РєС‚РёРІРёС‚Рё
+ * @author Renard Gold (РР»СЊСЏ Р•РіРѕСЂРѕРІ)
  */
 public class MainActivity extends Activity implements IDownloadStatus {
 
@@ -54,7 +54,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	private WakeLock mWakeLock;
 	
 	/**
-	 * Инициализация активити
+	 * РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р°РєС‚РёРІРёС‚Рё
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	}
 	
 	/**
-	 * Старт загрузки
+	 * РЎС‚Р°СЂС‚ Р·Р°РіСЂСѓР·РєРё
 	 */
 	private void doStart() {
 		if (!Utils.isOnline(this)) {
@@ -116,7 +116,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	}
 	
 	/**
-	 * Стоп загрузки
+	 * РЎС‚РѕРї Р·Р°РіСЂСѓР·РєРё
 	 */
 	private void doStop(boolean isSuccess) {
 		setStatus(false, null, null);
@@ -136,21 +136,21 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	}
 	
 	/**
-	 * Установка нового EPO
+	 * РЈСЃС‚Р°РЅРѕРІРєР° РЅРѕРІРѕРіРѕ EPO
 	 */
 	private void doInstall() {
 		if (RootTools.isRootAvailable() && RootTools.isAccessGiven()) {
 			setStatus(true, getString(R.string.epo_status_installing), 100);
 			final String epoFile = mEpoFile.getText().toString();
 
-			// Проверим, существует ли вообще скачанный файл
+			// РџСЂРѕРІРµСЂРёРј, СЃСѓС‰РµСЃС‚РІСѓРµС‚ Р»Рё РІРѕРѕР±С‰Рµ СЃРєР°С‡Р°РЅРЅС‹Р№ С„Р°Р№Р»
 			File file = new File(DEST_DOWNLOAD_PATH);
 			if (!file.exists()) {
 				stopWithMessage(false, getString(R.string.err_download_no_file));
 				return;
 			}
 			
-			// Удаление старого, установка нового и установка новых прав
+			// РЈРґР°Р»РµРЅРёРµ СЃС‚Р°СЂРѕРіРѕ, СѓСЃС‚Р°РЅРѕРІРєР° РЅРѕРІРѕРіРѕ Рё СѓСЃС‚Р°РЅРѕРІРєР° РЅРѕРІС‹С… РїСЂР°РІ
 			String[] mCommands = new String[] { 
 					String.format("rm \"%s\"", epoFile),
 					String.format("cp \"%s\" \"%s\"", DEST_DOWNLOAD_PATH, epoFile),
@@ -185,7 +185,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	}
 	
 	/**
-	 * Перед загрузкой ставим вейллок
+	 * РџРµСЂРµРґ Р·Р°РіСЂСѓР·РєРѕР№ СЃС‚Р°РІРёРј РІРµР№Р»Р»РѕРє
 	 */
     @Override
     public void onPreExecute() {
@@ -196,7 +196,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
     }
 
     /**
-     * Обновляем статус загрузки
+     * РћР±РЅРѕРІР»СЏРµРј СЃС‚Р°С‚СѓСЃ Р·Р°РіСЂСѓР·РєРё
      */
     @Override
     public void onProgressUpdate(Integer... progress) {
@@ -220,7 +220,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
     }
 
     /**
-     * Обработка загруженных данных
+     * РћР±СЂР°Р±РѕС‚РєР° Р·Р°РіСЂСѓР¶РµРЅРЅС‹С… РґР°РЅРЅС‹С…
      */
     @Override
     public void onPostExecute(String result) {
@@ -237,7 +237,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
     }
     
     /**
-     * Создание меню
+     * РЎРѕР·РґР°РЅРёРµ РјРµРЅСЋ
      */
     public boolean onCreateOptionsMenu(Menu menu) {
     	mDownloadMenuItem = menu.add(0, 1, 0, R.string.epo_btn_download);
@@ -246,7 +246,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
       }
     
     /**
-     * Обработчик меню
+     * РћР±СЂР°Р±РѕС‚С‡РёРє РјРµРЅСЋ
      */
     public boolean onOptionsItemSelected(MenuItem menuitem){
         if (menuitem.getItemId() == 1) {
@@ -260,7 +260,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
     }
     
     /**
-     * Показ сообщения и остановка
+     * РџРѕРєР°Р· СЃРѕРѕР±С‰РµРЅРёСЏ Рё РѕСЃС‚Р°РЅРѕРІРєР°
      */
     private void stopWithMessage(boolean isSuccess, String error_text) {
     	Toast.makeText(this, error_text, Toast.LENGTH_LONG).show();
@@ -268,10 +268,10 @@ public class MainActivity extends Activity implements IDownloadStatus {
     }
 	
 	/**
-	 * Установка статуса
-	 * @param isVisible Видимо ли
-	 * @param text Текст статуса
-	 * @param progress Прогресс статуса (максимум 100)
+	 * РЈСЃС‚Р°РЅРѕРІРєР° СЃС‚Р°С‚СѓСЃР°
+	 * @param isVisible Р’РёРґРёРјРѕ Р»Рё
+	 * @param text РўРµРєСЃС‚ СЃС‚Р°С‚СѓСЃР°
+	 * @param progress РџСЂРѕРіСЂРµСЃСЃ СЃС‚Р°С‚СѓСЃР° (РјР°РєСЃРёРјСѓРј 100)
 	 */
 	private void setStatus(Boolean isVisible, String text, Integer progress) {
 		if (mStatusContainer != null && isVisible != null) {
@@ -286,7 +286,7 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	}
 	
 	/**
-	 * Получение стандартного EPO FILE URL
+	 * РџРѕР»СѓС‡РµРЅРёРµ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ EPO FILE URL
 	 * @return
 	 */
 	private String getRemoteURL() {
@@ -294,15 +294,15 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	}
 	
 	/**
-	 * Установка нового URL
-	 * @param url Новый URL
+	 * РЈСЃС‚Р°РЅРѕРІРєР° РЅРѕРІРѕРіРѕ URL
+	 * @param url РќРѕРІС‹Р№ URL
 	 */
 	private void setRemoteURL(String url) {
 		mPreferences.edit().putString(PREF_EPO_URL, url).commit();
 	}
 	
 	/**
-	 * Получение стандартного EPO FILE URL
+	 * РџРѕР»СѓС‡РµРЅРёРµ СЃС‚Р°РЅРґР°СЂС‚РЅРѕРіРѕ EPO FILE URL
 	 * @return
 	 */
 	private String getLocalPath() {
@@ -310,8 +310,8 @@ public class MainActivity extends Activity implements IDownloadStatus {
 	}
 	
 	/**
-	 * Установка нового пути
-	 * @param path Новый путь
+	 * РЈСЃС‚Р°РЅРѕРІРєР° РЅРѕРІРѕРіРѕ РїСѓС‚Рё
+	 * @param path РќРѕРІС‹Р№ РїСѓС‚СЊ
 	 */
 	private void setLocalPath(String path) {
 		mPreferences.edit().putString(PREF_EPO_FILE, path).commit();

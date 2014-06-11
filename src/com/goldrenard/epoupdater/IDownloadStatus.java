@@ -1,8 +1,8 @@
-package com.goldrenard.epoupdater;
+п»їpackage com.goldrenard.epoupdater;
 
 /**
- * Интерфейс-враппер статуса загрузки
- * @author Renard Gold (Илья Егоров)
+ * РРЅС‚РµСЂС„РµР№СЃ-РІСЂР°РїРїРµСЂ СЃС‚Р°С‚СѓСЃР° Р·Р°РіСЂСѓР·РєРё
+ * @author Renard Gold (РР»СЊСЏ Р•РіРѕСЂРѕРІ)
  */
 public interface IDownloadStatus {
 	public void onPreExecute();

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    
+    <string name="app_name">EPO Updater</string>
     <string name="reset_tip">Сброс на параметр по-умолчанию</string>
     
     <string name="epo_url_text">Удалённый адрес файла EPO.DAT:</string>

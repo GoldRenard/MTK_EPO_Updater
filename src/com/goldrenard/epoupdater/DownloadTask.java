@@ -1,4 +1,4 @@
-package com.goldrenard.epoupdater;
+п»їpackage com.goldrenard.epoupdater;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,8 +11,8 @@ import java.net.URLConnection;
 import android.os.AsyncTask;
 
 /**
- * Задача загрузки
- * @author Renard Gold (Илья Егоров)
+ * Р—Р°РґР°С‡Р° Р·Р°РіСЂСѓР·РєРё
+ * @author Renard Gold (РР»СЊСЏ Р•РіРѕСЂРѕРІ)
  */
 public class DownloadTask extends AsyncTask<String, Integer, String> {
     private IDownloadStatus mListener;
@@ -37,8 +37,8 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
             publishProgress(-101);
 
             if (connection instanceof HttpURLConnection) {
-	            // ожидаем HTTP 200 OK, так что мы не будем загружать содержимое
-	            // страницы ошибки вместо файла
+	            // РѕР¶РёРґР°РµРј HTTP 200 OK, С‚Р°Рє С‡С‚Рѕ РјС‹ РЅРµ Р±СѓРґРµРј Р·Р°РіСЂСѓР¶Р°С‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ
+	            // СЃС‚СЂР°РЅРёС†С‹ РѕС€РёР±РєРё РІРјРµСЃС‚Рѕ С„Р°Р№Р»Р°
             	
             	HttpURLConnection httpconnection = (HttpURLConnection)connection;
 	            if (httpconnection.getResponseCode() != HttpURLConnection.HTTP_OK) {
@@ -47,11 +47,11 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
 	            }
             }
 
-            // получаем размер файла (однако он может быть -1, поскольку
-            // удаленный сервер не обязан возвращать размер
+            // РїРѕР»СѓС‡Р°РµРј СЂР°Р·РјРµСЂ С„Р°Р№Р»Р° (РѕРґРЅР°РєРѕ РѕРЅ РјРѕР¶РµС‚ Р±С‹С‚СЊ -1, РїРѕСЃРєРѕР»СЊРєСѓ
+            // СѓРґР°Р»РµРЅРЅС‹Р№ СЃРµСЂРІРµСЂ РЅРµ РѕР±СЏР·Р°РЅ РІРѕР·РІСЂР°С‰Р°С‚СЊ СЂР°Р·РјРµСЂ
             int fileLength = connection.getContentLength();
 
-            // загружаем файл
+            // Р·Р°РіСЂСѓР¶Р°РµРј С„Р°Р№Р»
             input = connection.getInputStream();
             output = new FileOutputStream(dest);
 
@@ -59,15 +59,15 @@ public class DownloadTask extends AsyncTask<String, Integer, String> {
             long total = 0;
             int count;
             while ((count = input.read(data)) != -1) {
-                // разрешаем отмену операции
+                // СЂР°Р·СЂРµС€Р°РµРј РѕС‚РјРµРЅСѓ РѕРїРµСЂР°С†РёРё
                 if (isCancelled()) {
                     input.close();
                     mListener = null;
                     return null;
                 }
                 total += count;
-                // сообщаем о процессе
-                if (fileLength > 0) { // только если размер файла известен
+                // СЃРѕРѕР±С‰Р°РµРј Рѕ РїСЂРѕС†РµСЃСЃРµ
+                if (fileLength > 0) { // С‚РѕР»СЊРєРѕ РµСЃР»Рё СЂР°Р·РјРµСЂ С„Р°Р№Р»Р° РёР·РІРµСЃС‚РµРЅ
                     publishProgress((int) (total * 100 / fileLength), (int)total, fileLength);
                 }
                 output.write(data, 0, count);

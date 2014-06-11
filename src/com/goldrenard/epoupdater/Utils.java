@@ -1,4 +1,4 @@
-package com.goldrenard.epoupdater;
+п»їpackage com.goldrenard.epoupdater;
 
 import java.text.DecimalFormat;
 
@@ -7,13 +7,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * Класс с утилитами
- * @author Renard Gold (Илья Егоров)
+ * РљР»Р°СЃСЃ СЃ СѓС‚РёР»РёС‚Р°РјРё
+ * @author Renard Gold (РР»СЊСЏ Р•РіРѕСЂРѕРІ)
  */
 public class Utils {
 	
 	/**
-	 * Формат размера файла
+	 * Р¤РѕСЂРјР°С‚ СЂР°Р·РјРµСЂР° С„Р°Р№Р»Р°
 	 * @param size
 	 * @return
 	 */
@@ -25,8 +25,8 @@ public class Utils {
 	}
 	
 	/**
-	 * Проверка подключения к интернету
-	 * @return True если подключено
+	 * РџСЂРѕРІРµСЂРєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє РёРЅС‚РµСЂРЅРµС‚Сѓ
+	 * @return True РµСЃР»Рё РїРѕРґРєР»СЋС‡РµРЅРѕ
 	 */
 	public static boolean isOnline(Context context) {
 	    ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
