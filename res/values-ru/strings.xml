@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reset_tip">Сброс на параметр по-умолчанию</string>
+    
+    <string name="epo_url_text">Удалённый адрес файла EPO.DAT:</string>
+    <string name="epo_file_text">Расположение EPO.DAT в системе:</string>
+    <string name="epo_btn_download">Обновить</string>
+    
+    <string name="err_no_internet">Отсутствует соединение с интернетом</string>
+    <string name="err_download">Ошибка загрузки:&#160;</string>
+    <string name="err_download_no_file">Загрузка завершилась неудачей - файл назначения не найден.</string>
+    
+    <string name="epo_status_starting">Подготовка к загрузке&#8230;</string>
+    <string name="epo_status_downloading">Загрузка&#8230; [%1$s / %2$s]</string>
+    <string name="epo_status_root_req">Запрос ROOT доступа&#8230;</string>
+    <string name="epo_status_installing">Установка EPO.DAT&#8230;</string>
+    <string name="epo_status_completed">Обновление завершено!</string>
+    <string name="epo_status_failed">Обновление завершилось неудачей (неизвестная ошибка)!</string>
+    
+    <string name="err_root_required">Это приложение требует ROOT доступ.</string>
+    <string name="err_root_failed_timeout">Ошибка! Таймаут ROOT команды:&#160;</string>
+    <string name="err_root_failed_ioex">Ошибка! ROOT IOException:&#160;</string>
+    
+    <string name="epo_about_message">"\u0009Система прогнозирования положения орбиты EPO (Extended Prediction Orbit) является собственностью компании MediaTek. EPO - одна из инноваций использования сервера в автономном режиме на основе технологии A-GPS.
+         
+\u0009Система обеспечивает прогноз положения орбиты спутника на срок до 30 дней, что позволяет значительно повысить возможности пользователя во время первого определения местоположения (TTFF) GPS-спутников."</string>
+</resources>

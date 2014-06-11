@@ -1,0 +1,121 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="${packageName}.${activityClass}" >
+
+	<TextView
+	    android:id="@+id/url_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/epo_url_text" />
+	
+	<LinearLayout 
+	    android:id="@+id/url_container"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_below="@id/url_text">
+	    
+	    <EditText
+	        android:id="@+id/epo_url"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:inputType="textUri"
+	        android:layout_weight="1" />
+	    
+	    <ImageButton
+	        android:id="@+id/reset_btn"
+	        android:layout_width="40dp"
+	        android:layout_height="match_parent"
+	        android:src="@drawable/ic_reset"
+	        android:contentDescription="@string/reset_tip"/>
+	</LinearLayout>
+	
+	<TextView
+	    android:id="@+id/epo_text"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/epo_file_text"
+	    android:layout_below="@id/url_container" />
+	
+	<LinearLayout 
+	    android:id="@+id/epo_container"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_below="@id/epo_text">
+	    
+	    <EditText
+	        android:id="@+id/epo_file"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:inputType="text"
+	        android:layout_weight="1" />
+	    
+	    <ImageButton
+	        android:id="@+id/epo_reset_btn"
+	        android:layout_width="40dp"
+	        android:layout_height="match_parent"
+	        android:src="@drawable/ic_reset"
+	        android:contentDescription="@string/reset_tip" />
+	</LinearLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/status_layout"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true">
+	    
+	    <!-- WORKAROUND FOR INFO TEXT VISIBILITY -->
+	    <View android:layout_width="match_parent" android:layout_height="1dp" />
+	    
+	    <LinearLayout
+	        android:id="@+id/status_container"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:visibility="gone"
+	        android:orientation="horizontal">
+		    <ProgressBar 
+		        android:id="@+id/progressBar"
+		        android:layout_width="48dp"
+		        android:layout_height="48dp"
+		        android:indeterminate="true"/>
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        android:paddingTop="6dp">
+	        	    <TextView 
+				        android:id="@+id/status_text"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+				    <ProgressBar 
+				        android:id="@+id/status_progressBar"
+				        style="?android:attr/progressBarStyleHorizontal"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:max="100"
+				        android:progress="0"/>
+	        </LinearLayout>
+        </LinearLayout>
+	</RelativeLayout>
+	
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_above="@id/status_layout"
+	    android:layout_below="@id/epo_container">
+	    <TextView 
+	        android:layout_marginTop="5dp"
+	        android:layout_marginBottom="5dp"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:text="@string/epo_about_message"/>
+	</ScrollView>
+	
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="epo_def_url" translatable="false">http://epodownload.mediatek.com/EPO.DAT</string>
+	<string name="epo_def_file" translatable="false">/data/misc/EPO.DAT</string>
+    
+    <string name="app_name">EPO Updater</string>
+    <string name="reset_tip">Reset to default</string>
+    
+    <string name="epo_url_text">Remote EPO URL-address:</string>
+    <string name="epo_file_text">Location of EPO.DAT file:</string>
+    <string name="epo_btn_download">Update</string>
+    
+    <string name="err_no_internet">No Internet connection</string>
+    <string name="err_download">Download error:&#160;</string>
+    <string name="err_download_no_file">Update failed. Destination file not found.</string>
+    
+    <string name="epo_status_starting">Starting download&#8230;</string>
+    <string name="epo_status_downloading">Downloading&#8230; [%1$s / %2$s]</string>
+    <string name="epo_status_root_req">Requesting ROOT&#8230;</string>
+    <string name="epo_status_installing">Installing EPO.DAT&#8230;</string>
+    <string name="epo_status_completed">Completed!</string>
+    <string name="epo_status_failed">Failed with unknown error!</string>
+    
+    <string name="err_root_required">This app reqiure ROOT access</string>
+    <string name="err_root_failed_timeout">Failed! Root command timeout:&#160;</string>
+    <string name="err_root_failed_ioex">Failed! Root command IOException:&#160;</string>
+    
+    <string name="epo_about_message">"\u0009EPO (Extended Prediction Orbit) is one of MediaTek's innovative proprietary off-line server based A-GPS technology. 
+        
+\u0009It supports up to 30 days satellite orbit prediction, which can be used to greatly enhance user experience by improving GPS Time To First Fix (TTFF)."</string>
+</resources>
